@@ -1,3 +1,5 @@
+import time
+
 import pytest
 import source.my_functions as mf
 
@@ -25,3 +27,20 @@ def test_divide_with_check_zero():
     # Fail: with pytest.raises(ZeroDivisionError):
     with pytest.raises(ValueError):
         mf.divide_with_check_zero(10, 0)
+
+
+@pytest.mark.slow
+def test_very_slow():
+    time.sleep(5)
+    r = mf.divide(10, 5)
+    assert r == 2
+
+
+@pytest.mark.skip(reason="This feature is currently broken")
+def test_add():
+    assert mf.add(1, 2) == 3
+
+
+@pytest.mark.xfail(reason="We know we cannot divide by zero")
+def test_divide_zero_broken():
+    mf.divide(4, 0)
