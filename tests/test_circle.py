@@ -18,5 +18,5 @@ class TestCircle:
 
     def test_two(self):
         result = self.circle.perimeter()
-        expectecd = 2 * math.pi * self.circle.radius
-        assert result == expectecd
+        expected = 2 * math.pi * self.circle.radius
+        assert result == expected
