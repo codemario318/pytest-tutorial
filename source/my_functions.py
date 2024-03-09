@@ -1,0 +1,14 @@
+def add(number_one, number_two):
+    return number_one + number_two
+
+
+def divide(number_one, number_two):
+    return number_one / number_two
+
+
+def divide_with_check_zero(number_one, number_two):
+    if number_two == 0:
+        raise ValueError
+
+    return number_one / number_two
+
